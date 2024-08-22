@@ -18,32 +18,32 @@ if (icecream === 'chocolate') {
 
 const myImage = document.querySelector('img');
 myImage.onclick = () => {
-    const source = myImage.getAttribute('src');
-    if (source === 'shoe_1.png') {
-        myImage.setAttribute('src', 'shoe_2.png')
-    }
-    else{
-        myImage.setAttribute('src', 'shoe_1.png')
-    }
+	const source = myImage.getAttribute('src');
+	if (source === 'shoe_1.png') {
+		myImage.setAttribute('src', 'shoe_2.png');
+	} else {
+		myImage.setAttribute('src', 'shoe_1.png');
+	}
 };
 
 let myHeading = document.querySelector('h1');
 let myButton = document.querySelector('button');
-function setUserName(){
-    const myName = prompt('Please enter your name');
-    localStorage.setItem('name', myName);
-    /**myHeading.textContent = 'Chrome is cool, ${myName}';
+function setUserName() {
+	const myName = prompt('Please enter your name');
+	localStorage.setItem('name', myName);
+	/**myHeading.textContent = 'Chrome is cool, ${myName}';
 }**/
-    if (!localStorage.getItem('name')) {
-        setUserName();
-    }
-    else{
-        const storedName = localStorage.getItem('name');
-        myHeading.textContent = 'Google chrome is cool, ${storedName}';
-    }
-};
+	if (!localStorage.getItem('name')) {
+		setUserName();
+	} else {
+		const storedName = localStorage.getItem('name');
+		// myHeading.textContent = 'Google chrome is cool, ${storedName}';
+		myHeading.textContent = `Google chrome is cool, ${storedName}`;
+
+		// or use this
+		// myHeading.textContent = 'Google chrome is cool, ' + storedName;
+	}
+}
 myButton.onclick = () => {
-    setUserName();
+	setUserName();
 };
-
-
